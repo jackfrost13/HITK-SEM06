@@ -1,0 +1,70 @@
+<html>
+	<style>
+		body
+		{
+			text-align: center;
+			background: white;
+		}
+		#CounterVisitor
+		{
+		  overflow: hidden; 
+		  text-align: center;
+		  margin: auto;
+		}
+		.counter-item 
+		{
+		  background-color: white;
+		  font-size: 100px;
+		  padding: 40px;
+		  margin: 10px 10px 0 0;
+		  display: inline-block;
+		  border-style: solid;
+		  border-width: 3px;
+		  box-shadow: inset 0px 0px 20px 0px rgba(0,0,0,1);
+		}
+		button 
+		{
+		  margin: 20px 20px 0 0;
+		  padding: 0.5em 1em;
+		  font-size: 30px;
+		  border-radius: 20px;
+		  border-color: black;
+		}
+	</style>
+	<body>
+		<div id="CounterVisitor"></div>
+		<button onclick="resetPage()" class="fill">Reset Page Count</button>
+	</body>
+	<script>
+		function pad(num, size) 
+		{
+			var s = "00000000" + num;
+			return s.substr(s.length-size);
+		}
+		var n = localStorage.getItem('on_load_counter');
+		if (n === null) 
+		{
+		  n = 0;
+		}
+		n++;
+		localStorage.setItem("on_load_counter", n);
+		nums = pad(n,6).split('').map(Number);
+		document.getElementById('CounterVisitor').innerHTML = '';
+		for (var i of nums) 
+		{
+		  document.getElementById('CounterVisitor').innerHTML += '<span class="counter-item">' + i + '</span>';
+		}
+		function resetPage()
+		{
+			var n = localStorage.getItem('on_load_counter');
+			n = 0;
+			localStorage.setItem("on_load_counter", n);
+			nums = pad(n,6).split('').map(Number);
+			document.getElementById('CounterVisitor').innerHTML = '';
+			for (var i of nums) 
+			{
+			  document.getElementById('CounterVisitor').innerHTML += '<span class="counter-item">' + i + '</span>';
+			}
+		}
+	</script>
+</html>

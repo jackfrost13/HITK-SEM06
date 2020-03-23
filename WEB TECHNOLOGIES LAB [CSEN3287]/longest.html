@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script>
+			function Birthday()
+		    {
+				var txtValue = document.form.birthday.value+' ';
+				if (txtValue != null)
+					dob = txtValue.split('/');
+				if (dob.length === 3) {
+					born = new Date(dob[2], dob[1] * 1 , dob[0]);
+					var diff_ms = Date.now() - born.getTime();
+	   				var age_dt = new Date(diff_ms); 
+					document.getElementById('long').innerHTML += '<h1>Your Age is : ' + Math.abs(age_dt.getUTCFullYear() - 1970) + ' ; )</h1>';
+				}
+		    }
+        </script>
+        <title>Longest Word in Sentence</title>
+    </head>
+    <body>
+        <form name="form">
+            Your Birthday : <input type="date" name="birthday"/><br>
+        <input type="button" value="Submit" name="Submit" onclick="Birthday()"/> <br>
+        </form>
+		<div id="long"></div>
+    </body>
+</html>
+
+<!form validation>
+<!time & date>
+<!calculator>
+<!phone verification>
+<!array>
+<!dob>

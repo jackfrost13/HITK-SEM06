@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function validate()
+            {
+                var a=document.getElementById("phone").value;
+                console.log(a);
+                var l=/\d{10}$/;
+                if(a.match(l))
+                    alert("Yes");
+                else
+                    alert("No");
+                var ar=["apple","mango"];
+                console.log(ar);
+                ar.unshift("kiwi");
+                console.log(ar);
+                ar.sort();
+                console.log(ar);
+            }
+            </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+            Phone:<input id="phone" type="text" name="Phone"  /><br><br>
+            Submit:<input  type="submit" name="submit" onclick="validate()">
+            Date of Birth: <input type="date"><br>
+
+    </body>
+</html>
